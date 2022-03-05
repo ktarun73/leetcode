@@ -1,13 +1,12 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
-        int n=nums.length;
-        int ar[]=new int[n];
+        int zeroCount=0,zeroIndex=-1;
         int product=1;
-        int zeroIndex=-1,zeroCount=0;
-        for(int i=0;i<n;i++){
+        int ar[]=new int[nums.length];
+        for(int i=0;i<nums.length;i++){
             if(nums[i]==0){
-                zeroIndex=i;
                 zeroCount++;
+                zeroIndex=i;
             }
             else{
                 product*=nums[i];
@@ -20,11 +19,10 @@ class Solution {
             ar[zeroIndex]=product;
             return ar;
         }
-        else{
-            for(int i=0;i<n;i++){
-                ar[i]=product/nums[i];
-            }
+        for(int i=0;i<nums.length;i++){
+            ar[i]=product/nums[i];
         }
         return ar;
+        
     }
 }
