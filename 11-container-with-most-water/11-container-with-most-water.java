@@ -3,13 +3,11 @@ class Solution {
         int len=height.length;
         int lp=0;
         int rp=len-1;
-        if(lp==(rp-1)){
-            if(height[lp]>height[rp]){
-                return height[rp];
+        if(len==2){
+            if(height[0]<height[1]){
+                return height[0];
             }
-            else{
-                return height[lp];
-            }
+            return height[1];
         }
         
         int max=0;
