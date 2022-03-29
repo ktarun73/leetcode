@@ -2,9 +2,9 @@ class Solution {
     public char nextGreatestLetter(char[] letters, char target) {
         int start=0;
         int end=letters.length-1;
-        while(end>=start){
+        while(start<=end){
             int mid=start+(end-start)/2;
-            if(target<letters[mid]){
+            if(letters[mid]>target){
                 end=mid-1;
             }
             else{
