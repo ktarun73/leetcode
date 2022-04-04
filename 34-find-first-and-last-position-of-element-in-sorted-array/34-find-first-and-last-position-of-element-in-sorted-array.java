@@ -1,18 +1,14 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int n=nums.length;
-        int[] ar={-1,-1};
-        if(n==0) return ar;
-        ar[0]=search(nums,target,true);
-        ar[1]=search(nums,target,false);
+        int ar[]=new int[2];
+        ar[0]=binarySearch(nums,target,true);
+        ar[1]=binarySearch(nums,target,false);
         return ar;
     }
-    
-    public int search(int[] nums,int target,boolean isStart){
+    int binarySearch(int[] nums,int target,boolean isStart){
         int ans=-1;
-        int n=nums.length;
         int start=0;
-        int end=n-1;
+        int end=nums.length-1;
         while(start<=end){
             int mid=start+(end-start)/2;
             if(nums[mid]>target){
@@ -32,5 +28,5 @@ class Solution {
             }
         }
         return ans;
-    }   
+    }
 }
