@@ -3,14 +3,15 @@ class Solution {
         int start=0;
         int end=nums.length-1;
         while(start<=end){
-            int mid=start+(end-start)/2;
-            if(nums[mid]==target){
-                return mid;
+            int p=start+(end-start)/2;
+            if(nums[p]==target){
+                return p;
             }
-            if(nums[mid]>target){
-                end=mid-1;
-            }else{
-                start=mid+1;
+            if(nums[p]>target){
+                end=p-1;
+            }
+            else{
+                start=p+1;
             }
         }
         return start;
